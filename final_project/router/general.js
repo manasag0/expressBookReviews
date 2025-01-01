@@ -12,7 +12,12 @@ public_users.post("/register", (req,res) => {
 
 // Get the book list available in the shop
 public_users.get('/',function (req, res) {
-  //Write your code here
+  try{
+    // get all books
+    res.status(200).json(books);
+  }catch(err){
+    res.status(500).json({message: "Internal Server Error"});
+  }
   return res.status(300).json({message: "Yet to be implemented"});
 });
 
